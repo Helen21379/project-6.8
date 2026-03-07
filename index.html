@@ -14,10 +14,20 @@
     <button class="header__btn">
       <img src="img/burger.svg" alt="Меню">
     </button>
+    <div class="header__divider"></div>
     <img class="header__logo" src="img/cps.svg" alt="Логотип">
   </div>
 
   <div class="header__right">
+<button class="header__btn header__btn--tablet">
+       <img src="img/call.svg" alt="Позвонить">      
+</button>
+<button class="header__btn header__btn--tablet">
+      <img src="img/chat.svg" alt="Чат">
+    </button>
+    <button class="header__btn header__btn--tablet">
+      <img src="img/profile.svg" alt="Профиль">
+    </button>
     <div class="header__divider"></div>
     <button class="header__btn">
       <img src="img/gaechklyuch.svg" alt="Ремонт">
@@ -32,32 +42,35 @@
 <section class="services">
   <div class="services__header">
     <span class="services__decor"></span>
-  <h1 class="services__title">Услуги и сервисы</h1>
+    <h1 class="services__title">Услуги и сервисы</h1>
   </div>
-  <div class="section">
 
   <nav class="services__menu">
     <ul class="services__list">
-      <li class="services__item">
-        <a href="#" class="services__link services__link--state--active">Ремонтируемые устройства</a>
-      </li>
-      <li class="services__item">
-        <a href="#" class="services__link">Дополнительные услуги</a>
-      </li>
-      <li class="services__item">
-        <a href="#" class="services__link">Цены на услуги</a>
-      </li>
-      <li class="services__item">
-        <a href="#" class="services__link">Адреса сервисных центров</a>
-      </li>
+      <li class="services__item"><a href="#" class="services__link services__link--state--active">Ремонтируемые устройства</a></li>
+      <li class="services__item"><a href="#" class="services__link">Дополнительные услуги</a></li>
+      <li class="services__item"><a href="#" class="services__link">Цены на услуги</a></li>
+      <li class="services__item services__item--only-mobile"><a href="#" class="services__link">Адреса сервисных центров</a></li>
+      <li class="services__item services__item--only-tablet"><a href="#" class="services__link">Специальные цены</a></li>
     </ul>
   </nav>
-  </div>
 
-<p class="services__text">
-  Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
-  <div class="read-more-wrapper"><img src="img/blue strelka.svg" alt="стрелка" class="read-more-icon"><span class="read-more-text">Читать далее</span></div>
-  <div class="services__image"><img src="img/cpsBIG.svg" alt="bolyshaya"></div>
-  </section>
+  <div class="services__content">
+    <div class="services__text-block">
+      <p class="services__text">
+        Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+      </p>
+      <div class="read-more-wrapper">
+        <img src="img/blue strelka.svg" alt="стрелка" class="read-more-icon">
+        <span class="read-more-text">Читать далее</span>
+      </div>
+    </div>
+
+    <div class="services__image">
+      <img src="img/cpsBIG.svg" alt="bolyshaya">
+    </div>
+  </div>
+</section>
+
   </body>
 </html>
