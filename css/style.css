@@ -48,6 +48,8 @@ a {
     align-items: center;
     padding: 0 16px; 
     background-color: #ffffff;
+    position: relative;
+    z-index: 10;
 }
 
 .header__left,
@@ -282,130 +284,124 @@ a {
 
 
 @media (min-width: 768px) {
- .container {
-    max-width: 768px;
-    margin: 0 auto;
- }
- .header {
-    display: flex;
-    justify-content: space-between;
-    width: 768px;
-    height: 88px;
-    padding: 0 24px;
-    background-color: #ffffff;
-    border-radius: 0;
-
-    &__right {
-        display: flex;
-        gap: 16px;
-
-        .header__btn--tablet {
-            display: flex;
-        }
+    .container {
+        max-width: 768px;
     }
 
-    &__divider {
-            width: 2px;
-            height: 32px;
-            background-color: #EAEAEA;
-            border-radius: 1px;
-            margin: 0 20px; 
-        }
- 
-    &__left {
-      display: flex;
-      align-items: center;
-      gap: 0;
+    .header__btn--tablet {
+        display: flex; 
     }
-  }
 
-    .main-block {
-        flex-direction: row;
-        gap: 30px;
+    .header__divider {
+        display: block; 
+    }
+    
+    .header {
+        width: 100%;            
+        max-width: 768px;      
+        justify-content: space-between; 
+        padding: 0 24px;        
+        margin: 0 auto;         
+    }
 
+    .header__right {
+        gap: 20px;      
     }
 }
 
-.header__right {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        .header__btn.header__btn--tablet {
-            display: flex !important; 
-        }
-    }
-
     .services {
-        width: 769px;           
-        height: 416px;          
+        width: 768px;
+        height: 416px;
         background-color: #F8F8F8;
-        padding-top: 24px;                       
+        padding-top: 24px; 
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         box-sizing: border-box;
         overflow: hidden;
     }
 
-.services__header {
-    display: flex;
-    align-items: center;
+    .services__header {
+        margin-bottom: 32px; 
+        height: 40px;
+        padding-left: 0;
+    }
+
+    .services__decor {
+        left: 0;
+    }
+
+    .services__title {
+        padding-left: 24px;
+        margin-bottom: 0;
+    }
+
+    
+    .services__menu {
+    top: 0;
+    padding: 0;     
+    margin-left: 24px;  
     margin-bottom: 32px;
-    height: 40px;  
   }
 
-  .services__title {
+    .services__content {
+    padding: 0;   
+    margin-left: 24px;  
+    margin-right: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;      
+    max-width: 720px;
+  }
+
+    .services__text-block {
+        flex: 0 0 312px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services__text {
+    padding-left: 0;  
+    padding-right: 0;
     margin: 0;
-    padding-left: 24px;  
-    font-size: 28px;
-    line-height: 40px; 
-    font-weight: 700;
+    margin-bottom: 12px; 
   }
 
-  .services__item--only-mobile {
-        display: none !important;
+   .read-more-text {
+        font-family: "TT Lakes", sans-serif;
+        font-weight: 500;       
+        font-size: 16px;      
+        line-height: 24px;   
+        letter-spacing: -0.2px; 
+        color: #1B1C21;
+    }
+  
+  .read-more-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 16px; 
+        margin-top: 12px;  
+        cursor: pointer;
+    }
+
+    .services__image {
+        flex: 0 0 360px;
+        height: 208px;
+        margin: 0 !important; 
+    }
+
+    .services__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .services__item--only-mobile {
+        display: none; 
     }
 
     .services__item--only-tablet {
-        display: flex !important;
-    }
-
-    .services__menu {
-        margin-bottom: 32px;
-        padding-left: 24px;
-    }
-
-    
-
-  .services__content {
-    display: flex;          
-    flex-direction: row;
-    justify-content: space-between; 
-    align-items: flex-start;
-    width: 720px;           
-    height: 208px;         
-    margin-top: 40px; 
-    margin-left: 24px;
-    margin-right: 25px;
-    box-sizing: border-box;
-    overflow: hidden; 
-  }
-
-  .services__text-block {
-    flex: 0 0 312px; 
-    display: flex;
-    flex-direction: column;
-  }
-
-  .services__image {
-    flex: 0 0 360px; 
-    height: 208px;
-    margin: 0; !important;
-  }
-   
-    
-    img {
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      border-radius: 6px;
+        display: flex; 
     }
