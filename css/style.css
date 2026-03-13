@@ -405,3 +405,123 @@ a {
     .services__item--only-tablet {
         display: flex; 
     }
+
+
+@media (min-width: 1120px) {
+    .container {
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+
+    .services {
+        width: 1120px;
+        height: 535px;
+        background-color: #F8F8F8;
+        display: flex;
+        flex-direction: column;
+        padding-top: 42px; 
+        overflow: hidden;
+    }
+
+    .services__header {
+        width: 1098px;     
+        height: 130px;    
+        margin-top: 42px;    
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 32px;  
+        margin-bottom: 0;
+        position: relative;
+    }
+
+    .services__title {
+        padding-left: 0;
+        margin: 0;
+        font-size: 28px;
+        flex-shrink: 0; 
+    }
+
+    .services__actions {
+        display: flex;
+        gap: 32px;
+        margin-left: auto; 
+        padding-right: 32px;
+    }
+
+    .services__action-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .services__action-text {
+        font-weight: 500;
+        font-size: 16px;
+        color: #1B1C21;
+    }
+
+    .header__btn--pink {
+        background-color: #FF3E79; 
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .services__menu {
+        padding-left: 32px; 
+        margin-bottom: 25px;
+    }
+
+    .services__list {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 8px 20px;  
+    }
+
+    .services__item, 
+    .services__item--only-tablet {
+        display: flex !important; 
+        flex: 0 0 auto; 
+        width: auto;
+        padding: 0;
+    }
+
+    .services__link {
+        padding: 8px 16px;
+        white-space: nowrap;
+    }
+
+    .services__link--state--active {
+        background-color: #ffffff;
+        border: 2px solid #B8FFEC;
+        border-radius: 6px;
+    }
+
+    .services__content {
+        margin-left: 32px; 
+        margin-right: 32px;
+        max-width: 1056px; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .services__text-block {
+        flex: 0 0 490px;    
+    }
+
+    .services__image {
+        flex: 0 0 532px; 
+        height: 307px;
+    }
+
+    .header__btn--desktop-hide {
+        display: none; 
+    }
+}
+
+
+    
+    
