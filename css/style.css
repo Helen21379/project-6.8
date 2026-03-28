@@ -1,6 +1,5 @@
-*,
-*::before,
-*::after {
+
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -10,573 +9,235 @@
     font-family: "TT Lakes";
     src: url("../fonts/TTLakes-Regular.woff") format("woff");
     font-weight: 400;
-    font-style: normal;
 }
 
 @font-face {
     font-family: "TT Lakes";
     src: url("../fonts/TTLakes-Bold.woff") format("woff");
     font-weight: 700;
-    font-style: normal;
 }
 
 body {
     font-family: "TT Lakes", sans-serif;
+    background-color: #F8F8F8;
+    color: #1B1C21;
+    overflow-x: hidden;
 }
 
-button,
-a {
+button, a {
     font-family: inherit;
+    cursor: pointer;
 }
 
 .container {
     width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-    background-color: #F8F8F8;
-}
-
-.section {
-    padding: 0; 
-    flex-direction: column;
-    display: flex;
+    max-width: 1120px;
+    margin: 0 auto;  
 }
 
 .header {
     height: 88px;
-    display: flex;
-    align-items: center;
-    padding: 0 16px; 
     background-color: #ffffff;
-    position: relative;
-    z-index: 10;
-}
-
-.header__left,
-.header__right {
     display: flex;
     align-items: center;
-    gap: 16px; 
+    justify-content: space-between;
+    width: 100%;       /* Растягиваем на весь экран */
+    padding: 0 16px;  
+    border-bottom: 1px solid #D9FFF5;
 }
 
-.header__btn {
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: none;
+.header__left, .header__right {
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.header__btn img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: contain;
-}
-
-.header__logo {
-    width: 96.55px;
-    height: 50.81px;
-    border: none;
-    flex-shrink: 0;
+    gap: 16px;
 }
 
 .header__divider {
     width: 2px;
     height: 32px;
     background-color: #EAEAEA;
-    border-radius: 1px;
-    flex: 0 0 2px;
-    margin-left: 16px;
-    margin-right: 16px;
+    flex-shrink: 0;
+    display: block;
 }
 
-.header__btn--tablet {
-    display: none;
+.header__btn {
+    width: 40px; height: 40px;
+    border: none; background: none;
+    display: flex; align-items: center; justify-content: center;
 }
 
-.services {
-    padding: 24px 0;
-    height: 509px;
-    background-color: #F8F8F8;
-    box-sizing: border-box; 
-}
+.header__btn--tablet, .header__btn--pink { display: none; }
+
+.services {  padding: 24px 0; }
 
 .services__header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 16px; 
-    position: relative;
-    padding-left: 16px;
-}
-
-.services__decor {
-    position: absolute;
-    left: 2px; 
-    top: 0;
-    width: 4px;
-    height: 40px;
-    background-color: #41F6D7;
-    border-radius: 0 6px 6px 0; 
+    margin-bottom: 24px;
+    position: relative; 
 }
 
 .services__title {
     font-size: 28px;
     font-weight: 700;
-    margin: 0 0 16px;
+    line-height: 40px;
+    padding-left: 16px; 
+    position: relative; 
+    margin: 0;
 }
 
-.services__content {
-    padding: 0 16px; 
+.services__decor {
+    position: absolute;
+    /* Вместо отрицательного left ставим 0, так как у заголовка есть свой padding-left: 16px */
+    left: 0; 
+    top: 0;
+    width: 4px; 
+    height: 40px; 
+    background-color: #41F6D7 !important;
+    border-radius: 0 6px 6px 0;
+    display: block !important;
 }
+
+.services__actions { display: none; } 
 
 .services__menu {
-    overflow-x: auto;
-    position: relative;
-    top: -16px; 
-    padding: 0 16px 0 8px; 
+    display: flex; 
+    overflow-x: auto; 
     scrollbar-width: none;
+    margin-bottom: 24px; 
+    padding-left: 16px;
 }
 
-.services__menu::-webkit-scrollbar {
-    display: none;
+.services__menu::-webkit-scrollbar { display: none; }
+
+.services__list { 
+    display: flex; 
+    gap: 20px; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
 }
 
-.services__list {
-    display: flex;
-    gap: 1px; 
-    list-style: none;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 0;
-}
-
-.services__item {
-    flex: 0 0 150px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    white-space: nowrap;
-    padding: 8px 4px; 
-    border-radius: 6px; 
-}
-
-.services__item--state--active {
-    border: 2px solid #41F6D7;
-    border-radius: 6px;
-}
-
-.services__link {
-    display: block;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: -0.2px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #7E7E82;
-    white-space: nowrap;
+.services__link { 
+    text-decoration: none; 
+    font-size: 16px; 
+    color: #7E7E82; 
+    white-space: nowrap; 
 }
 
 .services__link--state--active {
-    background-color: #ffffff;
+    background-color: #ffffff; 
     border: 2px solid #B8FFEC;
+    border-radius: 6px; 
+    padding: 8px 16px; 
+    color: #1B1C21;
+    display: inline-block; 
+    line-height: 1; 
 }
 
-.services__text {
-  font-family: TT Lakes, sans-serif;
-   font-weight: 400;
-    font-size: 14px;
+.services__content { 
+    display: flex; 
+    flex-direction: column; 
+    padding: 0 16px; 
+    gap: 24px; 
+}
+
+.services__text { 
+    font-size: 14px; 
     line-height: 18px; 
-    margin-bottom: 16px;
-    padding: 0 12px;
-    letter-spacing: 0.2px; 
+    margin-bottom: 16px; 
 }
 
-.services__text--desktop-only {
-    display: none; 
+.services__text--desktop-only { display: none; }
+
+.read-more-wrapper { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
 }
 
-.services__more {
-    height: 24px;
-    margin-top: 16px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
-    background: none;
-    border: none;
-    color: #000000;
-    font-weight: 500;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-}
-
-.services__more span {
-  font-family: 'TotalX', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  white-space: nowrap;
-} 
-
-.services__more img {
-    width: 16px;
-    height: 16px;
-    display: block;
-}
-
-.services__more-icon {
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.services__image {
-  margin-top: 16px;
-  padding-left: 0;
-  padding-right: 0;
-  }
-
-  .services__image img {
-    width: 100%;
-    display: block;
-  }
-
-  .services__item--only-tablet {
-    display: none;
-}
-
-.services__item--only-mobile {
-    display: flex;
-}
-
-  .read-more {
-    font-family: 'TT Lakes', sans-serif;
-  }
-
-  .read-more-wrapper {
-  display: flex;           
-  align-items: center;     
-  gap: 4px;                
-  margin-left: 16px;       
-  white-space: nowrap;     
-}
-
-.read-more-text {
-  font-family: 'TT Lakes', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-}
-
-.read-more-icon {
-  width: 24px;             
-  height: 24px;
-  margin-right: 4px;
-  margin-left: -4px;
+.services__image img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 6px; 
 }
 
 
 @media (min-width: 768px) {
-    .container {
-        max-width: 768px;
-    }
-
-    .header__btn--tablet {
-        display: flex; 
-    }
-
-    .header__divider {
-        display: block; 
-    }
-    
-    .header {
-        width: 100%;            
-        max-width: 768px;      
-        justify-content: space-between; 
-        padding: 0 24px;        
-        margin: 0 auto;         
-    }
-
-    .header__right {
-        gap: 20px;      
-    }
-}
-
-    .services {
-        width: 768px;
-        height: 416px;
-        background-color: #F8F8F8;
-        padding-top: 24px; 
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    .services__header {
-        margin-bottom: 32px; 
-        height: 40px;
-        padding-left: 0;
-    }
-
-    .services__decor {
-        left: 0;
-    }
-
-    .services__title {
-        padding-left: 24px;
-        margin-bottom: 0;
-    }
+    .container { max-width: 100%; }
+    .header { padding: 0 24px;}
+    .header__btn--tablet { display: flex !important; }
 
     
-    .services__menu {
-    top: 0;
-    padding: 0;     
-    margin-left: 24px;  
-    margin-bottom: 32px;
-  }
-
-    .services__content {
-    padding: 0;   
-    margin-left: 24px;  
-    margin-right: 24px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: auto;      
-    max-width: 720px;
-  }
-
-    .services__text-block {
-        flex: 0 0 312px;
-        display: flex;
-        flex-direction: column;
+    .services__header, 
+    .services__content, 
+    .services__menu { 
+        padding-left: 24px !important;
+        padding-right:  24px; 
     }
 
-    .services__text {
-    padding-left: 0;  
-    padding-right: 0;
-    margin: 0;
-    margin-bottom: 12px; 
-  }
-
-   .read-more-text {
-        font-family: "TT Lakes", sans-serif;
-        font-weight: 500;       
-        font-size: 16px;      
-        line-height: 24px;   
-        letter-spacing: -0.2px; 
-        color: #1B1C21;
-    }
-  
-  .read-more-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-left: 16px; 
-        margin-top: 12px;  
-        cursor: pointer;
-    }
-
-    .services__image {
-        flex: 0 0 360px;
-        height: 208px;
-        margin: 0 !important; 
-    }
-
-    .services__image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 6px;
-    }
-
-    .services__item--only-mobile {
-        display: none; 
-    }
-
-    .services__item--only-tablet {
-        display: flex; 
-    }
-
-
-
-    @media (min-width: 1120px) {
-    .header {
-        display: none !important;
-    }
-
-    .container {
-        max-width: 1120px;
-        margin: 0 auto;
-    }
-
-    .services {
-        width: 100%;
-        height: auto; 
-        background-color: #F8F8F8;
-        display: flex;
-        flex-direction: column;
-        padding-top: 42px; 
-        overflow: visible; 
-    }
-
-    .services__header {
-        width: 100%;     
-        height: auto;    
-        display: flex;
+    .services__content { 
         flex-direction: row; 
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 32px; 
-        margin-bottom: 25px;
-        position: relative;
-        box-sizing: border-box; 
+        gap: 32px;
+    } 
+        
+    .services__text-block, 
+    .services__image { 
+        flex: 1; 
     }
 
-    .services__title {
-        padding-left: 0;
-        margin: 0;
-        font-size: 28px;
-        font-weight: 700;
-        line-height: 40px;
-    }
+    .services__title { padding-left: 0 !important; }
+
+    .services__list { padding-left: 0;}
+
+   
+@media (min-width: 1120px) {
+    .container { max-width: 1120px; }
+    .header { display: none; } /* Прячем мобильную шапку */
+
+    .services__header { padding: 0 32px; }
+    .services__title { padding-left: 0; }
 
     .services__actions {
-        display: flex;
-        flex-direction: row; 
-        align-items: center;
+        display: flex !important;
         gap: 32px;
-        padding-right: 32px;
+        align-items: center;
     }
 
+   
     .services__action-item {
         display: flex;
         align-items: center;
-        gap: 12px;
-        font-weight: 500;
+        gap: 8px; /* Расстояние между кружком и словом */
+        white-space: nowrap; /* Чтобы текст не переносился */
     }
 
-    .header__btn--pink {
-        background-color: #FF3E79; 
+    .services__actions .header__btn--pink {
+        display: flex !important;
+        background-color: #FF6699; 
         border-radius: 50%;
-        width: 40px;
+        width: 40px;  
         height: 40px;
-        border: none;
         flex-shrink: 0; 
     }
 
-    .services__menu {
-        padding-left: 0 !important; 
-        margin-left: 32px !important; 
-        margin-bottom: 25px;
-        width: 1088px !important; 
-    }
-
-    .services__list {
-        display: flex;
-        flex-wrap: wrap; 
-        gap: 8px 10px !important;  
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .services__item, 
-    .services__item--only-tablet {
+    .services__actions .header__btn--pink {
         display: flex !important;
-        visibility: visible !important;
-        flex: 0 0 auto;
-        width: auto;
+        background-color: #FF6699; 
+        border-radius: 50%;
+        color: #ffffff;
     }
 
-    .services__link {
-        padding: 8px 8px !important; 
+    /* Стили для текста рядом с кнопкой */
+    .services__action-text {
         font-weight: 500;
-        text-decoration: none;
-        color: #7E7E82;
-        white-space: nowrap; 
         font-size: 16px;
-        display: inline-block;
+        color: #1B1C21;
     }
 
-    .services__link--state--active {
-        background-color: #ffffff;
-        border: 2px solid #B8FFEC;
-        border-radius: 6px;
-    }
-
-    .services__content {
-        margin-left: 32px; 
-        margin-right: 32px;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        gap: 36px;
-        align-items: flex-start; 
-        margin-bottom: 80px; 
-    }
-
-    .services__text-block {
-        flex: 0 0 490px;
-        margin-top: 9px; 
-    }
-
-    .services__text {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        margin-bottom: 15px;
-    }
-
-    .read-more-wrapper {
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
-    }
-
-    .services__image {
-        flex: 0 0 531.35px;
-        height: 307px;
-        margin-top: 0; 
-    }
-
-    .services__image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 6px;
-    }
-
-    .services__text--desktop-only {
-        display: inline !important; 
-        margin: 0; 
-        padding: 0;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    .services__menu { padding-left: 32px !important; }
+    .services__content { padding: 0 32px; gap: 36px; }
+    .services__text-block { flex: 0 0 490px; }
+    .services__image { flex: 0 0 531px; }
+    .services__text--desktop-only { display: inline; }
