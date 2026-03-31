@@ -115,8 +115,9 @@ button, a {
     display: flex; 
     gap: 20px; 
     list-style: none; 
-    padding: 0; 
+    padding: 4px 0; 
     margin: 0; 
+    align-items: center;
 }
 
 .services__link { 
